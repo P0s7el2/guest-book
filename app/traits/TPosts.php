@@ -13,7 +13,7 @@ trait TPosts{
             $sql .= ' WHERE accounts.id = :id';
             $result = $this->db->row($sql, $params);
         } else {
-            $result = $this->db->row('SELECT posts.id, accounts.login, mark, text, date FROM posts INNER JOIN accounts ON (posts.account = accounts.id)');
+            $result = $this->db->row($sql);
         }
         return $result;
     }
